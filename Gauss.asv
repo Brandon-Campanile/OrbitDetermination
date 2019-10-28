@@ -3,7 +3,7 @@
 %   Given r_initial, r_final, and time-of-flight determine the orbital
 %   elements of a satellite.
 
-function Gauss(r_i, r_f, tof, tol, iter)
+function Gauss(r_i, r_f, start_date, end_date, orbBody, tol, iter)
 clear; clc; close all
 %% Usage:
 %
@@ -78,7 +78,7 @@ clear; clc; close all
 %   
 %   delta_nu = 'long way': largest angle between r_i and r_f; 'short way':
 %   smallest angle between r_i and r_f.
-%   
+%   dates = 
 %
 %% Equations:
 %   
@@ -105,63 +105,107 @@ clear; clc; close all
 %
 %% Initialize:
 
-AU = 149597870700; % meters
-r_i = []./AU; % first position in distance units
-r_f = []./AU; % second position in distance units
-mu_sun = 1.32712440018e20; % m^3/s^2 heliocentric gravitational constant
-TU = sqrt(DU^3/mu_sun); % Time unit for heliocentric orbit
+start_date = datetime(start_date, 'Format','dd-MMM-yyyy HH:mm:ss:SSS');
+end_date = datetime(end_date, 'Format','dd-MMM-yyyy HH:mm:ss:SSS');
+tof = milliseconds(end_date-start_date)/1000; % milliseconds will increase accuracy as the seconds function would round the result
+
+T=readtable('constants.xlsx', 'ReadVariableNames', true, 'ReadRowNames', true);
+
+DU=T.(orbBody)('DU (m)'); % meters (1 AU if heliocentric)
+r_i = r_i./DU; % first position in distance units
+r_f = r_f./DU; % second position in distance units
+mu = T.(orbBody)('Gravitational Constant (m3/s2)'); % m^3/s^2 gravitational constant of central body
+TU = sqrt(DU^3/mu); % Time unit for heliocentric orbit
 delta_nu_short = acos(dot(r_i,r_f)/(norm(r_i)*norm(r_f))); % Find angle between two vectors
 delta_nu_long = 2*pi-delta_nu_short;
 tof = tof/TU;
 x=floor(iter); % number of iteration to attempt
-i=0;
+long = p_iter(delta_nu_long);
+short = p_iter(delta_nu_short);
+SemiMajorAxis = [short(1); long(1)];
+Eccentricity = [short(2); long(2)];
+Inclination = [short(3); long(3)];
+LongitudeoftheAscendingNode = [short(4); long(4)];
+ArgumentofPeriapsis = [short(5); long(5)];
+OE = table(SemiMajorAxis, Eccentricity, Inclination, LongitudeoftheAscendingNode, ArgumentofPeriapsis, 'RowNames', {'Short Way','Long Way'});
 
-%% Determine Initial Value of P:
-
-k=r_i*r_f*(1-cos(delta_nu));     % k, l, & m are intermediary values for calculation with no physical representation
-l=r_i+r_f; 
-m=r_i*r_f*(1+cos(delta_nu)); 
-
-p_i=k/(l+sqrt(2*m));   % lower bound of p for the "short way" below which there is no solution (open end of parabola at p_i and open end of hyperbola at p<p_i) if p->inf, tof->0 and is the straight line solution
-p_ii=k/(1-sqrt(2*m));  % upper bound of p for the "long way" above which there is no solution (open end of parabola at p_ii and open end of hyperbola at p>p_ii) as p->0, tof->0 and is degenerate hyperbola (travel along r_i to focus then along r_f)
-p=(p_i+p_ii)/2;      % Choose average value between p_i and p_ii as an initial starting value as it is guaranteed to have a solution
-
-
+writetable(OE,'Orbi','WriteRowNames',true)  
 %% P-Iteration Method:
-while i<=x
-    a = m*k*p/((2*m-l^2)*p^2+2*k*l*p-k^2); % Elliptic if 0<a<inf, hyperbolic if -inf<a<0, parabolic if a->+/-inf
-    f = 1-r_f/p*(1-cos(delta_nu))=1-a/r_i*(1-cos(delta_E));
-    g=r_i*r_f*sin(delta_nu)/sqrt(mu*p)=t-sqrt(a^3/mu)*(delta_E - sin(delta_E));
-    f_dot=sqrt(mu/p)*tan(delta_nu/2)*((1-cos(delta_nu))/p-1/r_i-1/r_f)=-sqrt(mu*a)/(r_i*r_f)*sin(delta_nu);
-    
-    if a<0 % hyperbolic
-        delta_F=acosh(1-r_i/a*(1-f));
-        t_n=g+sqrt((-a)^3/mu)*(sinh(delta_F)-delta_F);
-        dtdp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))-sqrt((-a)^3/mu)*(2*k*sinh(delta_F)/(p*(k-l*p)));
-    else % elliptic (parabolic?)
-        delta_E = 1-r_i/a*(1-f);
-        delta_E2 = -r_i*r_f*f'/sqrt(mu*a);
+    function out = p_iter(delta_nu)
+    %% Determine Initial Value of P:
+        k = norm(r_i)*norm(r_f)*(1-cos(delta_nu));     % k, l, & m are intermediary values for calculation with no physical representation
+        l = norm(r_i)+norm(r_f);
+        m = norm(r_i)*norm(r_f)*(1+cos(delta_nu));
         
-        t_n=g+sqrt(a^3/mu)*(delta_E-sin(delta_E));
-        dtdp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))+sqrt(a^3/mu)*(2*k*sin(delta_E)/(p*(k-l*p)));
+        p_i = k/(l+sqrt(2*m));   % lower bound of p for the "short way" below which there is no solution (open end of parabola at p_i and open end of hyperbola at p<p_i) if p->inf, tof->0 and is the straight line solution
+        p_ii = k/(1-sqrt(2*m));  % upper bound of p for the "long way" above which there is no solution (open end of parabola at p_ii and open end of hyperbola at p>p_ii) as p->0, tof->0 and is degenerate hyperbola (travel along r_i to focus then along r_f)
+        p = (p_i+p_ii)/2;      % Choose average value between p_i and p_ii as an initial starting value as it is guaranteed to have a solution
+        i = 0;
+        
+    %% Iteration
+        while i<=x
+            a = m*k*p/((2*m-l^2)*p^2+2*k*l*p-k^2); % Elliptic if 0<a<inf, hyperbolic if -inf<a<0, parabolic if a->+/-inf
+            f = 1-norm(r_f)/p*(1-cos(delta_nu));
+            g = norm(r_i)*norm(r_f)*sin(delta_nu)/sqrt(p);
+            f_dot = -sqrt(a)/(norm(r_i)*norm(r_f))*sin(delta_nu);
+            
+            if a<0 % hyperbolic
+                delta_F = acosh(1-norm(r_i)/a*(1-f));
+                t_n = g+sqrt((-a)^3)*(sinh(delta_F)-delta_F);
+                dtdp = -g/(2*p)-3/2*a*(t_n-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))-sqrt((-a)^3)*(2*k*sinh(delta_F)/(p*(k-l*p)));
+            else % elliptic (parabolic?)
+                d_E_cos = 1-norm(r_i)/a*(1-f);
+                d_E_sin = -norm(r_i)*norm(r_f)*f_dot/sqrt(a);
+                delta_E = atan(d_E_sin/d_E_cos);
+                if d_E_cos<0
+                    delta_E = pi+delta_E;
+                end
+                t_n = g+sqrt(a^3)*(delta_E-sin(delta_E));
+                dtdp = -g/(2*p)-3/2*a*(t_n-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))+sqrt(a^3)*(2*k*sin(delta_E)/(p*(k-l*p)));
+            end
+            
+            if tof-t_n<=tol
+                break
+            elseif i==x
+                sprintf("did not converge in %d iterations", x)
+            end
+            i=i+1;
+            
+            p=p+(tof-t_n)/(dtdp);
+            
+        end
+        g_dot=1-norm(r_i)/p*(1-cos(delta_nu));
+        v_i=(norm(r_f)-f*norm(r_i))/g;
+        v_f=f_dot*norm(r_i)+g_dot*v_i;
+        
+    %% Calculate Orbital Elements:
+        h=cross(r_i,v_i);
+        e=1/mu*((norm(v_i)^2-mu/norm(r_i)).*r_i - dot(r_i,v_i)*v_i);
+        ec=norm(e);
+        inc=acosd(dot(h,[0 0 1])/norm(h));
+        n=cross([0 0 1],h);
+        if dot(n,[0 1 0])<0
+            Omega=2*pi - acos(dot(n,[1 0 0])/norm(n));
+        else
+            Omega=acos(dot(n,[1 0 0])/norm(n));
+        end
+        if dot(e,[0 0 1])<0
+            om=2*pi - acos(dot(n,e)/(norm(n)*norm(e)));
+        else
+            om = acos(dot(n,e)/(norm(n)*norm(e)));
+        end
+        if dot(r,v)<0
+            nu=2*pi - acos(dot(e,r)/(norm(e)*norm(r)));
+        else
+            nu=acos(dot(e,r)/(norm(e)*norm(r)));
+        end
+        if dot(r,[0 0 1])<0
+            u=2*pi - acos(dot(n,r)/(norm(n)*norm(r)));
+        else
+            u=acos(dot(n,r)/(norm(n)*norm(r)));
+        end
+        out = [p, ec, inc, Omega, om, nu, u, v_i, v_f];
     end
-    
-    if tof-t_n<=1e4
-        break
-    elseif i=x
-        sprintf("did not converge in %d iterations", x)
-    end
-    i=i+1;
-    
-    p=p+(tof-t_n)/(dtdp);
-    
-end
-
-g_dot=1-r_i/p*(1-cos(delta_nu))=1-a/r_f*(1-cos(delta_E));
-v_i=(r_f-f*r_i)/g;
-v_f=f'*r_i+g'*v_i;
-
-%% Calculate Orbital Elements:
 
 
 %% Plot:
