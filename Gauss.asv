@@ -139,12 +139,9 @@ while i<=x
         t_n=g+sqrt((-a)^3/mu)*(sinh(delta_F)-delta_F);
         dtdp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))-sqrt((-a)^3/mu)*(2*k*sinh(delta_F)/(p*(k-l*p)));
     else % elliptic (parabolic?)
-        d_E_cos = 1-r_i/a*(1-f);
-        d_E_sin = -r_i*r_f*f'/sqrt(mu*a);
-        delta_E = atan(d_E_sin/d_E_cos);
-        if d_E_cos<0
-            delta_E = pi+delta_E;
-        end
+        delta_E = 1-r_i/a*(1-f);
+        delta_E2 = -r_i*r_f*f'/sqrt(mu*a);
+        
         t_n=g+sqrt(a^3/mu)*(delta_E-sin(delta_E));
         dtdp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))+sqrt(a^3/mu)*(2*k*sin(delta_E)/(p*(k-l*p)));
     end
