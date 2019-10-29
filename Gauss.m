@@ -3,7 +3,7 @@
 %   Given r_initial, r_final, and time-of-flight determine the orbital
 %   elements of a satellite.
 
-function Gauss(r_i, r_f, start_date, end_date, orbBody, tol, iter)
+function Gauss(r_i, r_f, start_date, end_date, orbBody, tol, iter, tstep)
 clear; clc; close all
 %% Usage:
 %
@@ -123,11 +123,12 @@ x=floor(iter); % number of iteration to attempt
 long = p_iter(delta_nu_long);
 short = p_iter(delta_nu_short);
 SemiMajorAxis = [short(1); long(1)];
-Eccentricity = [short(2); long(2)];
-Inclination = [short(3); long(3)];
-LongitudeoftheAscendingNode = [short(4); long(4)];
-ArgumentofPeriapsis = [short(5); long(5)];
-OE = table(SemiMajorAxis, Eccentricity, Inclination, LongitudeoftheAscendingNode, ArgumentofPeriapsis, 'RowNames', {'Short Way','Long Way'});
+SemiLatusRectum = [short(2); long(2)];
+Eccentricity = [short(3); long(3)];
+Inclination = [short(4); long(4)];
+LongitudeoftheAscendingNode = [short(5); long(5)];
+ArgumentofPeriapsis = [short(6); long(6)];
+OE = table(SemiMajorAxis, SemiLatusRectum, Eccentricity, Inclination, LongitudeoftheAscendingNode, ArgumentofPeriapsis, 'RowNames', {'Short Way','Long Way'});
 
 writetable(OE,'OrbitalElements.xlsx','WriteRowNames',true)  
 %% P-Iteration Method:
@@ -182,6 +183,7 @@ writetable(OE,'OrbitalElements.xlsx','WriteRowNames',true)
         h=cross(r_i,v_i);
         e=1/mu*((norm(v_i)^2-mu/norm(r_i)).*r_i - dot(r_i,v_i)*v_i);
         ec=norm(e);
+        a = p/(1-ec^2);
         inc=acosd(dot(h,[0 0 1])/norm(h));
         n=cross([0 0 1],h);
         if dot(n,[0 1 0])<0
@@ -204,10 +206,66 @@ writetable(OE,'OrbitalElements.xlsx','WriteRowNames',true)
         else
             u=acos(dot(n,r)/(norm(n)*norm(r)));
         end
-        out = [p, ec, inc, Omega, om, nu, u, v_i, v_f];
+        out = [a, p, ec, inc, Omega, om, nu, u, v_i, v_f];
     end
 
 %% Plot:
+y0 = [r_i out(9)]';
+t = 0:tstep:tof;
+    function dydt=orbdyn(t,y)
+        dydt(1)=y(4);
+        dydt(2)=y(5);
+        dydt(3)=y(6);
+        dydt(4)=-y(1)/(sqrt(y(1)^2+y(2)^2+y(3)^2))^3;
+        dydt(5)=-y(2)/(sqrt(y(1)^2+y(2)^2+y(3)^2))^3;
+        dydt(6)=-y(3)/(sqrt(y(1)^2+y(2)^2+y(3)^2))^3;
+    end
+[t,y1] = ode45(@orbdyn, t, y0); % Transfer orbit
+
+y02 = [r_E v_E]';
+[t,y2] = ode45(@orbdyn, t, y02); % Earth orbit
+
+y03 = [r_V v_V]';
+[t,y3] = ode45(@orbdyn, t, y03); % Venus orbit
+
+y02 = [r_Me v_Me]';
+[t,y4] = ode45(@orbdyn, t, y04); % Mercury orbit
+
+y02 = [r_Ma v_Ma]';
+[t,y5] = ode45(@orbdyn, t, y05); % Mars orbit
+
+y02 = [r_J v_J]';
+[t,y6] = ode45(@orbdyn, t, y06); % Jupiter orbit
+
+y02 = [r_S v_S]';
+[t,y7] = ode45(@orbdyn, t, y07); % Saturn orbit
+
+y02 = [r_N v_N]';
+[t,y8] = ode45(@orbdyn, t, y08); % Neptune orbit
+
+y02 = [r_U v_U]';
+[t,y9] = ode45(@orbdyn, t, y09); % Uranus orbit
+
+y02 = [r_P v_P]';
+[t,y10] = ode45(@orbdyn, t, y010); % Pluto orbit
+
+plot3(y1(1,:),y1(2,:),y1(3,:), '-m',... % Transfer orbit
+    r_i(1),r_i(2),r_i(3),'or', r_f(1),r_f(2),r_f(3),'or',... % Initial and starting positions
+    0, 0, 0, 'oy','MarkerSize',12,'MarkerFaceColor','y',... % Sun marker
+    y2(1,:),y2(2,:),y2(3,:),'-c',... % Plot Earth orbit
+    y3(1,:),y3(2,:),y3(3,:),'-y',... % Plot Venus orbit
+    y4(1,:),y4(2,:),y4(3,:),'-r',... % Plot Mercury orbit
+    y5(1,:),y5(2,:),y5(3,:),'-r',... % Plot Mars orbit
+    y6(1,:),y6(2,:),y6(3,:),'-w',... % Plot Jupiter orbit
+    y7(1,:),y7(2,:),y7(3,:),'-b',... % Plot Saturn orbit
+    y8(1,:),y8(2,:),y8(3,:),'-g',... % Plot Neptune orbit
+    y9(1,:),y9(2,:),y9(3,:),'-y',... % Plot Uranus orbit
+    y10(1,:),y10(2,:),y10(3,:),'-w') % Plot Pluto orbit
+axis equal
+grid on
+hold on
+
+plot3(
 
 
 end
