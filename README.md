@@ -69,23 +69,23 @@ corresponds to a_min, the "minimum energy ellipse".
 
 ## Equations:
    
-   (1): k=r_i*r_f*(1-cos(delta_nu))
-   (2): l=r_i+r_f
-   (3): m=r_i*r_f*(1+cos(delta_nu))
-   (4): p_i=k/(l+sqrt(2*m))
-   (5): p_ii=k/(1-sqrt(2*m))
-   (6): a= m*k*p/((2*m-l^2)*p^2+2*k*l*p-k^2)
-   (7): f=1-r_f/p*(1-cos(delta_nu))=1-a/r_i*(1-cos(delta_E))
-   (8): g=r_i*r_f*sin(delta_nu)/sqrt(mu*p)=t-sqrt(a^3/mu)*(delta_E - sin(delta_E))
-   (9): f'=sqrt(mu/p)*tan(delta_nu/2)*((1-cos(delta_nu))/p-1/r_i-1/r_f)=-sqrt(mu*a)/(r_i*r_f)*sin(delta_nu)
-  (10): cos(delta_E)=1-r_i/a*(1-f)
-  (11): sin(delta_E)=-r_i*r_f*f'/sqrt(mu*a)
-  (12): cosh(delta_F)=1-r_i/a*(1-f)
-  (13): t=g+sqrt(a^3/mu)*(delta_E-sin(delta_E))
-  (14): t=g+sqrt((-a)^3/mu)*(sinh(delta_F)-delta_F)
-  (15): dt/dp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))+sqrt(a^3/mu)*(2*k*sin(delta_E)/(p*(k-l*p)))
-  (16): dt/dp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))-sqrt((-a)^3/mu)*(2*k*sinh(delta_F)/(p*(k-l*p)))
-  (17): p_(n+1)=p_n+(t_desired-t_n)/(dt/dp_n)
-  (18): g'=1-r_i/p*(1-cos(delta_nu))=1-a/r_f*(1-cos(delta_E))
-  (19): v_i=(r_f-f*r_i)/g
-  (20): v_f=f'*r_i+g'*v_i
+   - (1): k=r_i*r_f*(1-cos(delta_nu))
+   - (2): l=r_i+r_f
+   - (3): m=r_i*r_f*(1+cos(delta_nu))
+   - (4): p_i=k/(l+sqrt(2*m))
+   - (5): p_ii=k/(1-sqrt(2*m))
+   - (6): a= m*k*p/((2*m-l^2)*p^2+2*k*l*p-k^2)
+   - (7): f=1-r_f/p*(1-cos(delta_nu))=1-a/r_i*(1-cos(delta_E))
+   - (8): g=r_i*r_f*sin(delta_nu)/sqrt(mu*p)=t-sqrt(a^3/mu)*(delta_E - sin(delta_E))
+   - (9): f'=sqrt(mu/p)*tan(delta_nu/2)*((1-cos(delta_nu))/p-1/r_i-1/r_f)=-sqrt(mu*a)/(r_i*r_f)*sin(delta_nu)
+  - (10): cos(delta_E)=1-r_i/a*(1-f)
+  - (11): sin(delta_E)=-r_i*r_f*f'/sqrt(mu*a)
+  - (12): cosh(delta_F)=1-r_i/a*(1-f)
+  - (13): t=g+sqrt(a^3/mu)*(delta_E-sin(delta_E))
+  - (14): t=g+sqrt((-a)^3/mu)*(sinh(delta_F)-delta_F)
+  - (15): dt/dp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))+sqrt(a^3/mu)*(2*k*sin(delta_E)/(p*(k-l*p)))
+  - (16): dt/dp=-g/(2*p)-3/2*a*(t-g)*((k^2+(2*m-l^2)*p^2)/(m*k*p^2))-sqrt((-a)^3/mu)*(2*k*sinh(delta_F)/(p*(k-l*p)))
+  - (17): p_(n+1)=p_n+(t_desired-t_n)/(dt/dp_n)
+  - (18): g'=1-r_i/p*(1-cos(delta_nu))=1-a/r_f*(1-cos(delta_E))
+  - (19): v_i=(r_f-f*r_i)/g
+  - (20): v_f=f'*r_i+g'*v_i
