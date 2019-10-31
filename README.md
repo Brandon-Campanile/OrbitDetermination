@@ -69,7 +69,7 @@ corresponds to a_min, the "minimum energy ellipse".
 
 ## Equations:
    
-   - (1): k=r_i*r_f*(1-cos(delta_nu))
+   - (1): k=r_i\*r_f\*(1-cos(delta_nu))
    - (2): l=r_i+r_f
    - (3): m=r_i*r_f*(1+cos(delta_nu))
    - (4): p_i=k/(l+sqrt(2*m))
