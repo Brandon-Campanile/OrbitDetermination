@@ -28,7 +28,7 @@ clear; clc; close all
 r_i = [-139034613.257526, -51514828.828285, -22329811.378710];
 r_f = [-140167397.186301, -48736658.091816, -21125310.009550];
 start_date = 'Apr 12, 2025 00:00:00.005 PST';
-end_date = 'Mar 2, 2026 00:00:00.000 PST';
+end_date = 'Apr 11, 2026 00:00:00.000 PST';
 CentralBody = 'Sun';
 
 %
@@ -37,7 +37,7 @@ CentralBody = 'Sun';
 %
 %% Initialize:
 
-cspice_furnsh('kernels\metakernel.tm')
+cspice_furnsh('kernels/metakernel.tm')
 
 if exist('options', 'var') && round(length(options)/2)~=length(options)/2
    error('options needs propertyName/propertyValue pairs')

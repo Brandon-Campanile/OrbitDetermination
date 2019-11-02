@@ -5,9 +5,9 @@ and radii, leapseconds, and gravitational parameters.
 
    \begindata
 
-        KERNELS_TO_LOAD = (  'kernels\lsk\naif0012.tls.pc',
-                             'kernels\lsk\naif0012.tls.pc',
-                             'kernels\pck\gm_de431.tpc',
-                             'kernels\pck\pck00010.tpc',
-                             'kernels\spk\de430.bsp' )
+        KERNELS_TO_LOAD = (  'kernels/lsk/naif0012.tls.pc',
+                             'kernels/lsk/naif0012.tls',
+                             'kernels/pck/gm_de431.tpc',
+                             'kernels/pck/pck00010.tpc',
+                             'kernels/spk/de430.bsp' )
    \begintext
