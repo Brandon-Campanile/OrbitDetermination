@@ -1,12 +1,13 @@
-\begintext
+KPL/MK
 
-Here are the required SPICE kernels for planetary ephemeris, planet orientation
+   Here are the required SPICE kernels for planetary ephemeris, planet orientation
 and radii, leapseconds, and gravitational parameters.
 
-\begindata
+   \begindata
 
-        KERNELS_TO_LOAD = (  'lsk\naif0012.tls',
-                             'lsk\naif0012.tls.pc',
-                             'pck\gm_de431.tpc',
-                             'pck\pck00010.tpc',
-                             'spk\de430t.bsp' )
+        KERNELS_TO_LOAD = (  'kernels\lsk\naif0012.tls.pc',
+                             'kernels\lsk\naif0012.tls.pc',
+                             'kernels\pck\gm_de431.tpc',
+                             'kernels\pck\pck00010.tpc',
+                             'kernels\spk\de430t.bsp' )
+   \begintext
