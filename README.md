@@ -17,7 +17,7 @@ This code requires the local installation of The SPICE Toolkit developed and dep
         addpath('<Path to local MICE toolkit>\mice\mice\lib')
         addpath('<Path to local MICE toolkit>\mice\mice\src\mice')
 * Step 5: Download and extract the OrbitDetermination repository on Github to your local machine. The 'Gauss.m' repository is dependent on the other files within the repository and requires all of them.
-* Step 6: Move the de430.bsp binary kernel included in the Github release (or downloaded by yourself) to <Path to Repository>/OrbitDetermination/kernels/ move the other kernels to their respective locations as shown on Github.
+* Step 6: Move the de430.bsp binary kernel included in the Github release (or downloaded by yourself) to <Path to Repository>/OrbitDetermination/kernels/spk/ (you'll have to create the 'spk' folder. Then move the other kernels to their respective locations as shown on Github if you downloaded them yourself.
 * Step 7: Not a step, but a handy list of SPICE/MICE resources:
     * https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/MATLAB/info/mostused.html#F
     * file:///<Path to local MICE toolkit>/mice/mice/doc/html/req/mice.html
