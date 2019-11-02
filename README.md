@@ -8,7 +8,7 @@ This code requires the local installation of The SPICE Toolkit developed and dep
 * Step 1: Download the SPICE Matlab (MICE) toolkit relevant to your local machine from the following website: https://naif.jpl.nasa.gov/naif/toolkit_MATLAB.html
 * Step 2: Unzip the downloaded file to your local machine
 * Step 3: In the Windows Command Prompt, execute the following after '>>', replacing <Path to local MICE toolkit> with the relevant path on your local machine to the unzipped toolkit: >> set PATH=<Path to local MICE toolkit>\mice\mice\exe;%PATH%
-* Step 4: Download the relevant kernels via ftp from NAIF's servers via the following:
+* Step 4: If you didn't download the relevant kernels from this repository, download them via ftp from NAIF's servers via the following:
     * Orbit Ephemeris binary kernel: ftp://ssd.jpl.nasa.gov/pub/eph/planets/bsp/de430t.bsp
     * Leapseconds text kernel: Windows: ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls.pc; Other: ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls
     * Gravitational parameters text kernel: ftp://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/gm_de431.tpc
@@ -17,7 +17,8 @@ This code requires the local installation of The SPICE Toolkit developed and dep
         addpath('<Path to local MICE toolkit>\mice\mice\lib')
         addpath('<Path to local MICE toolkit>\mice\mice\src\mice')
 * Step 5: Download and extract the OrbitDetermination repository on Github to your local machine. The 'Gauss.m' repository is dependent on the other files within the repository and requires all of them.
-* Step 6: Not a step, but a handy list of SPICE/MICE resources:
+* Step 6: Move the de430.bsp binary kernel included in the Github release (or downloaded by yourself) to <Path to Repository>/OrbitDetermination/kernels/ move the other kernels to their respective locations as shown on Github.
+* Step 7: Not a step, but a handy list of SPICE/MICE resources:
     * https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/MATLAB/info/mostused.html#F
     * file:///<Path to local MICE toolkit>/mice/mice/doc/html/req/mice.html
     * file:///<Path to local MICE toolkit>/mice/mice/doc/html/mice/index.html
