@@ -9,5 +9,5 @@ and radii, leapseconds, and gravitational parameters.
                              'kernels\lsk\naif0012.tls.pc',
                              'kernels\pck\gm_de431.tpc',
                              'kernels\pck\pck00010.tpc',
-                             'kernels\spk\de430t.bsp' )
+                             'kernels\spk\de430.bsp' )
    \begintext
