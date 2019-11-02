@@ -1,5 +1,6 @@
 # OrbitDetermination
 Orbit determination from two position vectors and the time-of-flight between them.
+**NOTE:** This is still a work in progress and not ready for stable release.
 
 ## Dependencies
 This code requires the local installation of The SPICE Toolkit developed and deployed by The Navigation and Ancillary Information Facility (NAIF), a department within JPL. The following section describes the steps needed to download and install the toolkit and kernels required by this code.
