@@ -1,0 +1,916 @@
+Astrogator Log File; DriverMCS: Mission_Control_Sequence
+-------------------------------------------------------------
+
+
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                   Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  0.000000000000 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Propagate : Altitude_Of_Apoapsis  415.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired          Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  356.599478893613 km  415.000000000000 km -58.400521106387 km  2.000000000000 km
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                           Value          Perturbation       Scaled Perturbation
+Maneuver : ImpulsiveMnvr.Cartesian.X  0.100000000000 m/sec  0.100000000000 m/sec      0.100000000000
+
+Constraints:
+Name                                         Value             Change          Scaled Change
+Propagate : Altitude_Of_Apoapsis  356.943521340528 km  0.344042446914 km   0.000829017944371
+
+
+Partial derivative matrix (scaled) :
+
+     0.00829017944371
+
+Newton Step Done...
+
+DC proposed step:
+Name                                           Scaled         Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.974801112539  16.974801112539 m/sec
+
+
+Step with Max Step limits applied:
+Name                                           Scaled         Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.974801112539  16.974801112539 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                    Current Value            Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.974801112539 m/sec  16.974801112539 m/sec  16.974801112539 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  419.407503034930 km  415.000000000000 km  4.407503034930 km  2.000000000000 km
+
+
+
+-------------------------------------------------------------
+Iteration =   2
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  419.407503034930 km  415.000000000000 km  4.407503034930 km  2.000000000000 km
+
+
+
+Updating partials with Secant method...
+
+Partial derivative matrix (scaled) :
+
+       0.008915841516
+
+Secant Update Done...
+
+DC proposed step:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X -1.191193138834 -1.191193138834 m/sec
+
+
+Step with Max Step limits applied:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X -1.191193138834 -1.191193138834 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.783607973705 m/sec -1.191193138834 m/sec  15.783607973705 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  415.018104579226 km  415.000000000000 km  0.018104579226 km  2.000000000000 km
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.783607973705 m/sec -1.191193138834 m/sec  15.783607973705 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  415.018104579226 km  415.000000000000 km  0.018104579226 km  2.000000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.783607973705 m/sec -1.191193138834 m/sec  15.783607973705 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  415.018104579226 km  415.000000000000 km  0.018104579226 km  2.000000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence1.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                   Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  0.000000000000 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Maneuver : Altitude_Of_Periapsis  415.000000000000 km
+Maneuver : Eccentricity             0.000000000000   
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired          Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  359.485819583064 km  415.000000000000 km -55.514180416936 km  2.000000000000 km
+Maneuver : Eccentricity             0.004312147605       0.000000000000      0.004312147605     0.010000000000   
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                           Value          Perturbation       Scaled Perturbation
+Maneuver : ImpulsiveMnvr.Cartesian.X  0.100000000000 m/sec  0.100000000000 m/sec      0.100000000000
+
+Constraints:
+Name                                         Value             Change          Scaled Change
+Maneuver : Altitude_Of_Periapsis  359.846886917850 km  0.361067334786 km   0.000870041770569
+Maneuver : Eccentricity             0.004283990188    -0.000028157417     -2.81574171043e-05
+
+
+Partial derivative matrix (scaled) :
+
+     0.00870041770569   -0.000281574171043
+
+Newton Step Done...
+
+DC proposed step:
+Name                                           Scaled         Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427  15.374958120427 m/sec
+
+
+Step with Max Step limits applied:
+Name                                           Scaled         Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427  15.374958120427 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                    Current Value            Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  15.374958120427 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  415.018104467136 km  415.000000000000 km  0.018104467136 km  2.000000000000 km
+Maneuver : Eccentricity             0.000021718593       0.000000000000     0.000021718593     0.010000000000   
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value            Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  15.374958120427 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  415.018104467136 km  415.000000000000 km  0.018104467136 km  2.000000000000 km
+Maneuver : Eccentricity             0.000021718593       0.000000000000     0.000021718593     0.010000000000   
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value            Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  15.374958120427 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  415.018104467136 km  415.000000000000 km  0.018104467136 km  2.000000000000 km
+Maneuver : Eccentricity             0.000021718593       0.000000000000     0.000021718593     0.010000000000   
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence1.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.783607973705 m/sec  0.000000000000 m/sec  15.783607973705 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Propagate : Altitude_Of_Apoapsis  415.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  419.467739803256 km  415.000000000000 km  4.467739803256 km  2.000000000000 km
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                            Value          Perturbation       Scaled Perturbation
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.883607973705 m/sec  0.100000000000 m/sec      0.100000000000
+
+Constraints:
+Name                                         Value             Change          Scaled Change
+Propagate : Altitude_Of_Apoapsis  419.836255587481 km  0.368515784225 km   0.000887989841507
+
+
+Partial derivative matrix (scaled) :
+
+     0.00887989841507
+
+Newton Step Done...
+
+DC proposed step:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X -1.212360499740 -1.212360499740 m/sec
+
+
+Step with Max Step limits applied:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X -1.212360499740 -1.212360499740 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  14.571247473966 m/sec -1.212360499740 m/sec  14.571247473966 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.999802630345 km  415.000000000000 km -0.000197369655 km  2.000000000000 km
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  14.571247473966 m/sec -1.212360499740 m/sec  14.571247473966 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.999802630345 km  415.000000000000 km -0.000197369655 km  2.000000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  14.571247473966 m/sec -1.212360499740 m/sec  14.571247473966 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.999802630345 km  415.000000000000 km -0.000197369655 km  2.000000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence1.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Maneuver : Altitude_Of_Periapsis  415.000000000000 km
+Maneuver : Eccentricity             0.000000000000   
+
+
+
+---Running one step of the differential corrector...
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  414.999802265448 km  415.000000000000 km -0.000197734552 km  2.000000000000 km
+Maneuver : Eccentricity             0.000035612461       0.000000000000     0.000035612461     0.010000000000   
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  414.999802265448 km  415.000000000000 km -0.000197734552 km  2.000000000000 km
+Maneuver : Eccentricity             0.000035612461       0.000000000000     0.000035612461     0.010000000000   
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence1.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  14.571247473966 m/sec  0.000000000000 m/sec  14.571247473966 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Propagate : Altitude_Of_Apoapsis  415.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  409.525386755249 km  415.000000000000 km -5.474613244751 km  2.000000000000 km
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                            Value          Perturbation       Scaled Perturbation
+Maneuver : ImpulsiveMnvr.Cartesian.X  14.671247473966 m/sec  0.100000000000 m/sec      0.100000000000
+
+Constraints:
+Name                                         Value             Change          Scaled Change
+Propagate : Altitude_Of_Apoapsis  409.894160210505 km  0.368773455256 km   0.000888610735556
+
+
+Partial derivative matrix (scaled) :
+
+     0.00888610735556
+
+Newton Step Done...
+
+DC proposed step:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X  1.484546451684  1.484546451684 m/sec
+
+
+Step with Max Step limits applied:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X  1.484546451684  1.484546451684 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.055793925650 m/sec  1.484546451684 m/sec  16.055793925650 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.998997676702 km  415.000000000000 km -0.001002323298 km  2.000000000000 km
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.055793925650 m/sec  1.484546451684 m/sec  16.055793925650 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.998997676702 km  415.000000000000 km -0.001002323298 km  2.000000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.055793925650 m/sec  1.484546451684 m/sec  16.055793925650 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.998997676702 km  415.000000000000 km -0.001002323298 km  2.000000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence1.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Maneuver : Altitude_Of_Periapsis  415.000000000000 km
+Maneuver : Eccentricity             0.000000000000   
+
+
+
+---Running one step of the differential corrector...
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  414.998997556129 km  415.000000000000 km -0.001002443871 km  2.000000000000 km
+Maneuver : Eccentricity             0.000034227653       0.000000000000     0.000034227653     0.010000000000   
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  414.998997556129 km  415.000000000000 km -0.001002443871 km  2.000000000000 km
+Maneuver : Eccentricity             0.000034227653       0.000000000000     0.000034227653     0.010000000000   
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence1.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.055793925650 m/sec  0.000000000000 m/sec  16.055793925650 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Propagate : Altitude_Of_Apoapsis  415.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  418.450685331038 km  415.000000000000 km  3.450685331038 km  2.000000000000 km
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                            Value          Perturbation       Scaled Perturbation
+Maneuver : ImpulsiveMnvr.Cartesian.X  16.155793925650 m/sec  0.100000000000 m/sec      0.100000000000
+
+Constraints:
+Name                                         Value             Change          Scaled Change
+Propagate : Altitude_Of_Apoapsis  418.819335832958 km  0.368650501920 km   0.000888314462458
+
+
+Partial derivative matrix (scaled) :
+
+     0.00888314462458
+
+Newton Step Done...
+
+DC proposed step:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X -0.936031637843 -0.936031637843 m/sec
+
+
+Step with Max Step limits applied:
+Name                                          Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Cartesian.X -0.936031637843 -0.936031637843 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.119762287806 m/sec -0.936031637843 m/sec  15.119762287806 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.999778949428 km  415.000000000000 km -0.000221050572 km  2.000000000000 km
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.119762287806 m/sec -0.936031637843 m/sec  15.119762287806 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.999778949428 km  415.000000000000 km -0.000221050572 km  2.000000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.119762287806 m/sec -0.936031637843 m/sec  15.119762287806 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  414.999778949428 km  415.000000000000 km -0.000221050572 km  2.000000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence1.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Maneuver : Altitude_Of_Periapsis  415.000000000000 km
+Maneuver : Eccentricity             0.000000000000   
+
+
+
+---Running one step of the differential corrector...
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  414.999778949431 km  415.000000000000 km -0.000221050569 km  2.000000000000 km
+Maneuver : Eccentricity             0.000023422602       0.000000000000     0.000023422602     0.010000000000   
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  414.999778949431 km  415.000000000000 km -0.000221050569 km  2.000000000000 km
+Maneuver : Eccentricity             0.000023422602       0.000000000000     0.000023422602     0.010000000000   
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence1.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.119762287806 m/sec  0.000000000000 m/sec  15.119762287806 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Propagate : Altitude_Of_Apoapsis  415.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.119762287806 m/sec  0.000000000000 m/sec  15.119762287806 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  415.705471044461 km  415.000000000000 km  0.705471044461 km  2.000000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.119762287806 m/sec  0.000000000000 m/sec  15.119762287806 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Propagate : Altitude_Of_Apoapsis  415.705471044461 km  415.000000000000 km  0.705471044461 km  2.000000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence.Differential_Corrector
+----------------------------------------------
+Begin targeter profile TCM.Target_Sequence1.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Maneuver : Altitude_Of_Periapsis  415.000000000000 km
+Maneuver : Eccentricity             0.000000000000   
+
+
+
+---Running one step of the differential corrector...
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  415.241098901032 km  415.000000000000 km  0.241098901032 km  2.000000000000 km
+Maneuver : Eccentricity             0.000035901734       0.000000000000     0.000035901734     0.010000000000   
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                    Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Cartesian.X  15.374958120427 m/sec  0.000000000000 m/sec  15.374958120427 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  415.241098901032 km  415.000000000000 km  0.241098901032 km  2.000000000000 km
+Maneuver : Eccentricity             0.000035901734       0.000000000000     0.000035901734     0.010000000000   
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile TCM.Target_Sequence1.Differential_Corrector

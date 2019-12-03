@@ -1,0 +1,629 @@
+Astrogator Log File; DriverMCS: Mission_Control_Sequence
+-------------------------------------------------------------
+
+
+----------------------------------------------
+Begin targeter profile Lower_Periapsis.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                          Current Value           Last Update       Total Correction
+Burn_1 : ImpulsiveMnvr.Spherical.Magnitude  24.000277303834 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Burn_1 : Altitude_Of_Periapsis  300.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                          Current Value           Last Update       Total Correction
+Burn_1 : ImpulsiveMnvr.Spherical.Magnitude  24.000277303834 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired         Difference          Tolerance
+Burn_1 : Altitude_Of_Periapsis  299.999732973457 km  300.000000000000 km -0.000267026543 km  0.100000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                          Current Value           Last Update       Total Correction
+Burn_1 : ImpulsiveMnvr.Spherical.Magnitude  24.000277303834 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired         Difference          Tolerance
+Burn_1 : Altitude_Of_Periapsis  299.999732973457 km  300.000000000000 km -0.000267026543 km  0.100000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile Lower_Periapsis.Differential_Corrector
+----------------------------------------------
+Begin targeter profile Raise_Periapsis.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                         Current Value           Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  0.000000000000 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Burn_2 : Altitude_Of_Periapsis  450.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired           Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  254.458330871033 km  450.000000000000 km -195.541669128967 km  0.100000000000 km
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                                 Value          Perturbation       Scaled Perturbation
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  0.100000000000 m/sec  0.100000000000 m/sec      0.100000000000
+
+Constraints:
+Name                                       Value             Change          Scaled Change
+Burn_2 : Altitude_Of_Periapsis  254.825121575267 km  0.366790704235 km   0.000815090453854
+
+
+Partial derivative matrix (scaled) :
+
+     0.00815090453854
+
+Newton Step Done...
+
+DC proposed step:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  53.311511679955  53.311511679955 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  10.000000000000  10.000000000000 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                          Current Value            Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  10.000000000000 m/sec  10.000000000000 m/sec  10.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired           Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  291.263762529705 km  450.000000000000 km -158.736237470295 km  0.100000000000 km
+
+
+
+-------------------------------------------------------------
+Iteration =   2
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired           Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  291.263762529705 km  450.000000000000 km -158.736237470295 km  0.100000000000 km
+
+
+
+Updating partials with Secant method...
+
+Partial derivative matrix (scaled) :
+
+     0.00817898481304
+
+Secant Update Done...
+
+DC proposed step:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  43.128481399808  43.128481399808 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  10.000000000000  10.000000000000 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                          Current Value            Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  20.000000000000 m/sec  10.000000000000 m/sec  20.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired           Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  328.326152901146 km  450.000000000000 km -121.673847098854 km  0.100000000000 km
+
+
+
+-------------------------------------------------------------
+Iteration =   3
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired           Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  328.326152901146 km  450.000000000000 km -121.673847098854 km  0.100000000000 km
+
+
+
+Updating partials with Secant method...
+
+Partial derivative matrix (scaled) :
+
+     0.00823608674921
+
+Secant Update Done...
+
+DC proposed step:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  32.829465633337  32.829465633337 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  10.000000000000  10.000000000000 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                          Current Value            Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  30.000000000000 m/sec  10.000000000000 m/sec  30.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired          Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  365.648065389963 km  450.000000000000 km -84.351934610037 km  0.100000000000 km
+
+
+
+-------------------------------------------------------------
+Iteration =   4
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired          Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  365.648065389963 km  450.000000000000 km -84.351934610037 km  0.100000000000 km
+
+
+
+Updating partials with Secant method...
+
+Partial derivative matrix (scaled) :
+
+     0.00829375833085
+
+Secant Update Done...
+
+DC proposed step:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  22.601182250591  22.601182250591 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  10.000000000000  10.000000000000 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                          Current Value            Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  40.000000000000 m/sec  10.000000000000 m/sec  40.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired          Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  403.232097944450 km  450.000000000000 km -46.767902055550 km  0.100000000000 km
+
+
+
+-------------------------------------------------------------
+Iteration =   5
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired          Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  403.232097944450 km  450.000000000000 km -46.767902055550 km  0.100000000000 km
+
+
+
+Updating partials with Secant method...
+
+Partial derivative matrix (scaled) :
+
+     0.00835200723433
+
+Secant Update Done...
+
+DC proposed step:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  12.443556179808  12.443556179808 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                 Scaled         Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  10.000000000000  10.000000000000 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                          Current Value            Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  50.000000000000 m/sec  10.000000000000 m/sec  50.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired         Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  441.080883639364 km  450.000000000000 km -8.919116360636 km  0.100000000000 km
+
+
+
+-------------------------------------------------------------
+Iteration =   6
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired         Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  441.080883639364 km  450.000000000000 km -8.919116360636 km  0.100000000000 km
+
+
+
+Updating partials with Secant method...
+
+Partial derivative matrix (scaled) :
+
+     0.00841084126554
+
+Secant Update Done...
+
+DC proposed step:
+Name                                                Scaled        Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  2.356513213536  2.356513213536 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                Scaled        Unscaled
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  2.356513213536  2.356513213536 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                          Current Value           Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  52.356513213536 m/sec  2.356513213536 m/sec  52.356513213536 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired         Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  450.038834597457 km  450.000000000000 km  0.038834597457 km  0.100000000000 km
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                          Current Value           Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  52.356513213536 m/sec  2.356513213536 m/sec  52.356513213536 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired         Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  450.038834597457 km  450.000000000000 km  0.038834597457 km  0.100000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                          Current Value           Last Update       Total Correction
+Burn_2 : ImpulsiveMnvr.Spherical.Magnitude  52.356513213536 m/sec  2.356513213536 m/sec  52.356513213536 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                               Current Value              Desired         Difference          Tolerance
+Burn_2 : Altitude_Of_Periapsis  450.038834597457 km  450.000000000000 km  0.038834597457 km  0.100000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile Raise_Periapsis.Differential_Corrector
+----------------------------------------------
+Begin targeter profile Target_Sequence.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                           Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  0.000000000000 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Maneuver : Eccentricity  0.000000000000
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                      Current Value         Desired      Difference       Tolerance
+Maneuver : Eccentricity  0.061207117247  0.000000000000  0.061207117247  0.010000000000
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                                   Value          Perturbation       Scaled Perturbation
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  0.100000000000 m/sec  0.100000000000 m/sec      0.100000000000
+
+Constraints:
+Name                              Value          Change       Scaled Change
+Maneuver : Eccentricity  0.061177969890 -0.000029147357  -2.91473569604e-05
+
+
+Partial derivative matrix (scaled) :
+
+   -0.000291473569604
+
+Newton Step Done...
+
+DC proposed step:
+Name                                                    Scaled          Unscaled
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  209.991998006370  209.991998006370 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                    Scaled          Unscaled
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  100.000000000000  100.000000000000 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                             Current Value             Last Update        Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  100.000000000000 m/sec  100.000000000000 m/sec  100.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                      Current Value         Desired      Difference       Tolerance
+Maneuver : Eccentricity  0.032259704881  0.000000000000  0.032259704881  0.010000000000
+
+
+
+-------------------------------------------------------------
+Iteration =   2
+Unscaled Intermediate Constraints:
+Name                      Current Value         Desired      Difference       Tolerance
+Maneuver : Eccentricity  0.032259704881  0.000000000000  0.032259704881  0.010000000000
+
+
+
+Updating partials with Secant method...
+
+Partial derivative matrix (scaled) :
+
+    -0.00028947412366
+
+Secant Update Done...
+
+DC proposed step:
+Name                                                    Scaled          Unscaled
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  111.442447681269  111.442447681269 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                    Scaled          Unscaled
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  100.000000000000  100.000000000000 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                             Current Value             Last Update        Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  200.000000000000 m/sec  100.000000000000 m/sec  200.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                      Current Value         Desired      Difference       Tolerance
+Maneuver : Eccentricity  0.003712581993  0.000000000000  0.003712581993  0.010000000000
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                             Current Value             Last Update        Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  200.000000000000 m/sec  100.000000000000 m/sec  200.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                      Current Value         Desired      Difference       Tolerance
+Maneuver : Eccentricity  0.003712581993  0.000000000000  0.003712581993  0.010000000000
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                             Current Value             Last Update        Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  200.000000000000 m/sec  100.000000000000 m/sec  200.000000000000 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                      Current Value         Desired      Difference       Tolerance
+Maneuver : Eccentricity  0.003712581993  0.000000000000  0.003712581993  0.010000000000
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile Target_Sequence.Differential_Corrector
+----------------------------------------------
+Begin targeter profile Raise_Periapsis.Target_Sequence.Differential_Corrector
+
+Initial control parameters:
+
+Unscaled Controls:
+Name                                           Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  5.000000000000 m/sec  0.000000000000 m/sec   0.000000000000 m/sec
+
+
+Homotopy step   1 of   1
+
+Intermediate Goals Desired:
+Maneuver : Altitude_Of_Periapsis  450.000000000000 km
+
+
+
+---Running one step of the differential corrector...
+
+-------------------------------------------------------------
+Iteration =   1
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  453.377251280690 km  450.000000000000 km  3.377251280690 km  1.000000000000 km
+
+
+
+Performing one Newton-Raphson Step...
+
+Perturbation evaluation +1
+Controls:
+Name                                                   Value          Perturbation       Scaled Perturbation
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  5.100000000000 m/sec  0.100000000000 m/sec      0.020000000000
+
+Constraints:
+Name                                         Value             Change          Scaled Change
+Maneuver : Altitude_Of_Periapsis  453.746011582206 km  0.368760301516 km   0.000819467336703
+
+
+Partial derivative matrix (scaled) :
+
+      0.0409733668352
+
+Newton Step Done...
+
+DC proposed step:
+Name                                                  Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude -0.183167833783 -0.915839168913 m/sec
+
+
+Step with Max Step limits applied:
+Name                                                  Scaled        Unscaled
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude -0.183167833783 -0.915839168913 m/sec
+
+
+Step final values:
+
+Unscaled Controls:
+Name                                           Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  4.084160831087 m/sec -0.915839168913 m/sec  -0.915839168913 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  450.001212976181 km  450.000000000000 km  0.001212976181 km  1.000000000000 km
+
+
+
+--------------------------------------------------------
+
+<<< Targeting Finished >>>
+    [Goals met]
+
+
+--------------------------------------------------------
+
+---Done. (running one step of the differential corrector.)
+
+Params from single diff corr
+
+Unscaled Controls:
+Name                                           Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  4.084160831087 m/sec -0.915839168913 m/sec  -0.915839168913 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  450.001212976181 km  450.000000000000 km  0.001212976181 km  1.000000000000 km
+
+
+
+----------------------------------------------
+Final Params from Homotopy Diff Corr
+
+Unscaled Controls:
+Name                                           Current Value           Last Update       Total Correction
+Maneuver : ImpulsiveMnvr.Spherical.Magnitude  4.084160831087 m/sec -0.915839168913 m/sec  -0.915839168913 m/sec
+
+
+Unscaled Intermediate Constraints:
+Name                                 Current Value              Desired         Difference          Tolerance
+Maneuver : Altitude_Of_Periapsis  450.001212976181 km  450.000000000000 km  0.001212976181 km  1.000000000000 km
+
+
+
+----------------------------------------------
+
+*********** Done Targeting************************
+
+End targeter profile Raise_Periapsis.Target_Sequence.Differential_Corrector

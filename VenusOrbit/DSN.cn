@@ -1,0 +1,32 @@
+stk.v.11.0
+WrittenBy    STK_v11.6.1
+
+BEGIN Constellation
+
+    Name		 DSN
+    BEGIN Definition
+
+        Object		 Facility/DSS_13_Goldstone_STDN_VEND
+        Object		 Facility/DSS_45_Tidbinbilla_STDN_DS45
+        Object		 Facility/DSS_65_Robledo_STDN_DS65
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 1
+        ToOperator		 Or
+        ToOrder		 1
+        ToParentConstraint		 AnyParent
+        FromParentConstraint		 AnyParent
+
+    END Definition
+
+    BEGIN Extensions
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+    END Extensions
+
+END Constellation
