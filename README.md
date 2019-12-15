@@ -75,7 +75,7 @@ corresponds to a_min, the "minimum energy ellipse".
    - (2): l=r_i+r_f
    - (3): m=r_i\*r_f\*(1+cos(delta_nu))
    - (4): p_i=k/(l+sqrt(2\*m))
-   - (5): p_ii=k/(1-sqrt(2\*m))
+   - (5): p_ii=k/(l-sqrt(2\*m))
    - (6): a= m\*k\*p/((2\*m-l^2)\*p^2+2\*k\*l\*p-k^2)
    - (7): f=1-r_f/p\*(1-cos(delta_nu))=1-a/r_i\*(1-cos(delta_E))
    - (8): g=r_i\*r_f\*sin(delta_nu)/sqrt(mu\*p)=t-sqrt(a^3/mu)\*(delta_E - sin(delta_E))
